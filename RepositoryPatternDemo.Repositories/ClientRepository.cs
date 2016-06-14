@@ -11,46 +11,45 @@ namespace RepositoryPatternDemo.Repositories
 {
     public class ClientRepository : IClientRepository
     {
-        internal ApplicationDbContext Context { get; set;  }
-        internal DbSet<Client> Set { get; set; }
+        internal ApplicationDbContext Context { get; set; }
+        internal ClientDbRepository ClientDbRepo { get; set; }
 
         public ClientRepository(ApplicationDbContext context) 
         {
             this.Context = context;
-            this.Set = Context.Set<Client>();
+            this.ClientDbRepo = new ClientDbRepository(context);
         }
 
-        public Client Find(int id)
+
+        public Models.Client Find(int id)
         {
-            return Set.Find(id);
+            var client = this.ClientDbRepo.Find(id);
+            return _mapper.GetModel(client);
         }
 
-        public void Insert(Client c)
+        public void Insert(Models.Client c)
         {
-            this.Set.Add(c);
+            var clientEntity = _mapper.GetEntity(c);
+            this.ClientDbRepo.Insert(clientEntity);
         }
 
-        public void Update(Client c)
+        public void Update(Models.Client c)
         {
-            if (this.Context.Entry<Client>(c).State == EntityState.Detached)
-            {
-                this.Set.Attach(c);
-            }
-            this.Context.Entry<Client>(c).State = EntityState.Modified;
+            var clientEntity = _mapper.GetEntity(c);
+            this.ClientDbRepo.Update(clientEntity);
         }
 
-        public void Delete(Client c)
+        public void Delete(Models.Client c)
         {
-            if (this.Context.Entry<Client>(c).State == EntityState.Detached)
-            {
-                this.Set.Attach(c);
-            }
-            this.Context.Entry<Client>(c).State = EntityState.Deleted;
+            var clientEntity = _mapper.GetEntity(c);
+            this.ClientDbRepo.Delete(clientEntity);
         }
 
         public void Save()
         {
             this.Context.SaveChanges();
         }
+
+        private ClientMapper _mapper = new ClientMapper();
     }
 }

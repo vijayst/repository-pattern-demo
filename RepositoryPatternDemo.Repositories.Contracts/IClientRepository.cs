@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using RepositoryPatternDemo.Entities;
+using RepositoryPatternDemo.Models;
 
 namespace RepositoryPatternDemo.Repositories.Contracts
 {

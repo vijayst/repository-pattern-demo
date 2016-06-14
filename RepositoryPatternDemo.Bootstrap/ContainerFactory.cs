@@ -34,9 +34,6 @@ namespace RepositoryPatternDemo.Bootstrap
                     return new Container(_ =>
                     {
                         _.For<IClientRepository>().Use<ClientRepository>();
-                        _.ForConcreteType<ApplicationDbContext>()
-                            .Configure
-                            .Ctor<string>("connStr").Is("DbConnection");
                     });
             }
             throw new ArgumentException("Won't reach here!");

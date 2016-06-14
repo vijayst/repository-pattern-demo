@@ -43,9 +43,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\RepositoryPatternDemo.Entities\RepositoryPatternDemo.Entities.csproj">
-      <Project>{627b68d3-0c51-49e2-a5e0-76d602dc1cbe}</Project>
-      <Name>RepositoryPatternDemo.Entities</Name>
+    <ProjectReference Include="..\RepositoryPatternDemo.Models\RepositoryPatternDemo.Models.csproj">
+      <Project>{d89c8c83-1308-477b-81cd-92ada5a440dc}</Project>
+      <Name>RepositoryPatternDemo.Models</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

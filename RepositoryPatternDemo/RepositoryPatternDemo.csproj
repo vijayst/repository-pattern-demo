@@ -38,6 +38,12 @@
     <Reference Include="EntityFramework.SqlServer">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="StructureMap">
+      <HintPath>..\packages\structuremap.4.2.0.402\lib\net40\StructureMap.dll</HintPath>
+    </Reference>
+    <Reference Include="StructureMap.Net4">
+      <HintPath>..\packages\structuremap.4.2.0.402\lib\net40\StructureMap.Net4.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -54,6 +60,20 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RepositoryPatternDemo.Bootstrap\RepositoryPatternDemo.Bootstrap.csproj">
+      <Project>{e493bb44-5463-4913-8c99-557d4ece3445}</Project>
+      <Name>RepositoryPatternDemo.Bootstrap</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RepositoryPatternDemo.Models\RepositoryPatternDemo.Models.csproj">
+      <Project>{d89c8c83-1308-477b-81cd-92ada5a440dc}</Project>
+      <Name>RepositoryPatternDemo.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\RepositoryPatternDemo.Repositories.Contracts\RepositoryPatternDemo.Repositories.Contracts.csproj">
+      <Project>{3d04547e-0713-483a-afb8-8f93b4a306c4}</Project>
+      <Name>RepositoryPatternDemo.Repositories.Contracts</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
