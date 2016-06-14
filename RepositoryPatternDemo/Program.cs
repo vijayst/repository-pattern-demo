@@ -19,12 +19,30 @@ namespace RepositoryPatternDemo
             {
                 Name = "Vijay"
             });
-            Console.WriteLine("Inserted to in-memory cache");
+            Console.WriteLine("Inserted to DbSet.");
             repo.Save();
-            Console.WriteLine("Saved to Db");
-            var client = repo.Find(1);
-            Console.WriteLine("{0}: {1}", client.Id, client.Name);
+            Console.WriteLine("Saved to Db.");
+            var client = repo.FindByName("Vijay");
+            Log(client);
+
+            client.Name = "Vijay T";
+            repo.Update(client);
+            Console.WriteLine("Updated DbSet.");
+            repo.Save();
+            Console.WriteLine("Saved to Db.");
+            client = repo.FindByName(client.Name);
+            Log(client);
+
+            repo.Delete(client);
+            Console.WriteLine("Removed from DbSet.");
+            repo.Save();
+
             Console.ReadKey();
+        }
+
+        static void Log(Client client)
+        {
+            Console.WriteLine("{0}: {1}", client.Id, client.Name);
         }
     }
 }

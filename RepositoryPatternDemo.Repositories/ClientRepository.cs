@@ -20,10 +20,15 @@ namespace RepositoryPatternDemo.Repositories
             this.ClientDbRepo = new ClientDbRepository(context);
         }
 
-
         public Models.Client Find(int id)
         {
             var client = this.ClientDbRepo.Find(id);
+            return _mapper.GetModel(client);
+        }
+
+        public Models.Client FindByName(string name)
+        {
+            var client = this.ClientDbRepo.FindByName(name);
             return _mapper.GetModel(client);
         }
 
@@ -36,13 +41,13 @@ namespace RepositoryPatternDemo.Repositories
         public void Update(Models.Client c)
         {
             var clientEntity = _mapper.GetEntity(c);
-            this.ClientDbRepo.Update(clientEntity);
+            this.ClientDbRepo.Update(clientEntity.Id, clientEntity);
         }
 
         public void Delete(Models.Client c)
         {
             var clientEntity = _mapper.GetEntity(c);
-            this.ClientDbRepo.Delete(clientEntity);
+            this.ClientDbRepo.Delete(clientEntity.Id);
         }
 
         public void Save()

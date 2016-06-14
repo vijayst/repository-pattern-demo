@@ -10,5 +10,10 @@ namespace RepositoryPatternDemo.Repositories
     class ClientDbRepository : BaseDbRepository<Client, int>
     {
         internal ClientDbRepository(ApplicationDbContext context) : base(context) { }
+
+        internal Client FindByName(string name)
+        {
+            return Context.Clients.FirstOrDefault(c => c.Name.Equals(name));
+        }
     }
 }

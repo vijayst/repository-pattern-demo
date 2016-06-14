@@ -10,6 +10,7 @@ namespace RepositoryPatternDemo.Repositories.Contracts
     public interface IClientRepository
     {
         Client Find(int id);
+        Client FindByName(string name);
         void Insert(Client c);
         void Update(Client c);
         void Delete(Client c);
