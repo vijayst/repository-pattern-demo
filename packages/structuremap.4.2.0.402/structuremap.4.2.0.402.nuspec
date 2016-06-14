@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>structuremap</id>
+    <version>4.2.0.402</version>
+    <title>structuremap</title>
+    <authors>Jeremy Miller, Dmytro Dziuma</authors>
+    <owners>Jeremy Miller, Dmytro Dziuma</owners>
+    <licenseUrl>https://github.com/structuremap/structuremap/raw/master/LICENSE.TXT</licenseUrl>
+    <projectUrl>http://structuremap.github.io/</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>StructureMap is a Dependency Injection / Inversion of Control tool for .Net</description>
+    <summary />
+    <dependencies>
+      <group targetFramework=".NETFramework4.0" />
+      <group targetFramework="WindowsPhone8.0" />
+      <group targetFramework="Windows8.0" />
+      <group targetFramework="Unsupported0.0">
+        <dependency id="System.Collections" version="4.0.10" />
+        <dependency id="System.Collections.Concurrent" version="4.0.10" />
+        <dependency id="System.Diagnostics.Debug" version="4.0.10" />
+        <dependency id="System.Globalization" version="4.0.10" />
+        <dependency id="System.IO" version="4.0.10" />
+        <dependency id="System.Linq" version="4.0.0" />
+        <dependency id="System.Linq.Expressions" version="4.0.10" />
+        <dependency id="System.Reflection" version="4.0.10" />
+        <dependency id="System.Reflection.Extensions" version="4.0.0" />
+        <dependency id="System.Reflection.TypeExtensions" version="4.0.0" />
+        <dependency id="System.Runtime" version="4.0.20" />
+        <dependency id="System.Runtime.Extensions" version="4.0.10" />
+        <dependency id="System.Threading" version="4.0.10" />
+        <dependency id="System.Threading.Tasks" version="4.0.10" />
+      </group>
+      <group targetFramework="MonoTouch0.0" />
+      <group targetFramework="MonoAndroid0.0" />
+    </dependencies>
+  </metadata>
+</package>
