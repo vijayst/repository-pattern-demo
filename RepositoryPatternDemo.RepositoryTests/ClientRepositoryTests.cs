@@ -3,11 +3,11 @@ using System.Data.Entity;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
+using RepositoryPatternDemo.Bootstrap;
 using RepositoryPatternDemo.Entities;
 using RepositoryPatternDemo.Models;
 using RepositoryPatternDemo.Repositories;
 using RepositoryPatternDemo.Repositories.Contracts;
-using StructureMap;
 
 namespace RepositoryPatternDemo.RepositoryTests
 {
