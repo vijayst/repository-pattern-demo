@@ -1,4 +1,4 @@
-# repository-pattern-demo
+# Repository pattern demo
 Usage of Repository pattern in .NET.
 
 From Martin Fowler enterprise patterns:
@@ -19,9 +19,9 @@ Domain Driven Design is useful for implementing repositories from multiple data 
 
 Using domain driven design and repository pattern together is much more complex. Dependency injection, Unit testing via Mocking, Mapping between persistence entities and business entities add to the complexity.
 
-## This project
+## Reference implementation
 
-The reference implementation in the Git project is an example of repository pattern in domain driven design. It uses a single data store accessed by Entity Framework. The demo is more of a starting point to discuss the complex trade-offs involved in the repository pattern used in domain driven design. Some of the design patterns used in this are:
+The reference implementation is an example of repository pattern in domain driven design. It uses a single data store accessed by Entity Framework. The demo is more of a starting point to discuss the complex trade-offs involved in the repository pattern used in domain driven design. Some of the design patterns used in this are:
 
 * Dependency injection via Structure map.
 * Mocks using Moq.
